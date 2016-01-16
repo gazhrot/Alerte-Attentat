@@ -26,6 +26,10 @@ angular.module('starter.controllers', [])
   };
 })
 /////////////////////////////////////////////////////////
+.controller('homeCtrl', function() {
+
+})
+/////////////////////////////////////////////////////////
 .controller('securiteCtrl', function($scope, $ionicLoading) {
     $scope.loading = $ionicLoading.show({
         content: 'Veuillez patienter nous essayons d\'envoyer les informations sur le serveur',
@@ -53,4 +57,8 @@ angular.module('starter.controllers', [])
             $scope.sideMenuController.toggleLeft();
         }
     }];
+    $scope.danger = function() {
+
+    }
+
 });

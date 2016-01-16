@@ -37,15 +37,9 @@ angular.module('starter.directives', [])
     return {
         restrict : 'EAC',
         link : function(scope, elem, attr) {
-
-            console.log("Dragback Link");
-
             $ionicGesture.on('swiperight', function(event) {
-
-                console.log('Got swiped!');
                 event.preventDefault();
                 window.history.back();
-
             }, elem);
         }
     }
