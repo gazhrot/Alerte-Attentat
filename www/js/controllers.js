@@ -1,13 +1,17 @@
 angular.module('starter.controllers', [])
 
-.controller('MapCtrl', function($scope, $ionicLoading, Safe) {
+.controller('MapCtrl', function($scope, $http, $location, $ionicLoading, Safe) {
   
-  $scope.addSafeMarker = function () {
+  $scope.addSafeMarker = function() {
     $scope.statut = Safe.getStatut();
     console.log("ajout du safe marqueur en cours");
 
     navigator.geolocation.getCurrentPosition(function (pos) {
       console.log('position?', pos);
+      $scope.latitude = pos.coords.latitude;
+      $scope.longitude = pos.coords.longitude;
+      console.log($scope.latitude);
+      console.log($scope.longitude);
       $scope.coord = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
       $scope.marker = new google.maps.Marker({
         icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
@@ -15,11 +19,20 @@ angular.module('starter.controllers', [])
         /*animation: google.maps.Animation.DROP,*/
         map: $scope.map
       });
-    }, function (error) {
+    }, function(error) {
       alert('Unable to get location: ' + error.message);
     })
+    $http.post('http://meet-taieb.rhcloud.com/', {
+      latitude: '$scope.latitude',
+      longitude: '$scope.longitude'
+    }).success(function(data) {
+      console.log(data);
+      $location.url('/');
+    }).error(function(data) {
+      console.error(data);
+    })
   }
-  $scope.addUnSafeMarker = function () {
+  $scope.addUnSafeMarker = function() {
     $scope.statut = Safe.getStatut();
     console.log("ajout du safe marqueur en cours");
 
@@ -38,6 +51,7 @@ angular.module('starter.controllers', [])
   }
   $scope.mapCreated = function(map) {
     $scope.map = map;
+    $scope.centerOnMe();
   };
 
   $scope.centerOnMe = function () {
