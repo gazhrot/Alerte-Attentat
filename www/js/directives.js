@@ -1,5 +1,5 @@
 angular.module('starter.directives', [])
-
+//////////////////////////////////////////////////////////
 .directive('map', function() {
   return {
     restrict: 'E',
@@ -9,7 +9,7 @@ angular.module('starter.directives', [])
     link: function ($scope, $element, $attr) {
       function initialize() {
         var mapOptions = {
-          center: new google.maps.LatLng(43.07493, -89.381388),
+          center: new google.maps.LatLng(48.867471, 2.363816),
           zoom: 16,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
@@ -31,4 +31,22 @@ angular.module('starter.directives', [])
       }
     }
   }
+})
+////////////////////////////////////////////////////////
+.directive('dragBack', function($ionicGesture, $state) {
+    return {
+        restrict : 'EAC',
+        link : function(scope, elem, attr) {
+
+            console.log("Dragback Link");
+
+            $ionicGesture.on('swiperight', function(event) {
+
+                console.log('Got swiped!');
+                event.preventDefault();
+                window.history.back();
+
+            }, elem);
+        }
+    }
 });

@@ -1,5 +1,5 @@
 angular.module('starter.controllers', [])
-
+//////////////////////////////////////////////////////
 .controller('MapCtrl', function($scope, $ionicLoading) {
   $scope.mapCreated = function(map) {
     $scope.map = map;
@@ -13,7 +13,7 @@ angular.module('starter.controllers', [])
 
     $scope.loading = $ionicLoading.show({
       content: 'Getting current location...',
-      showBackdrop: false
+      showBackdrop: true
     });
 
     navigator.geolocation.getCurrentPosition(function (pos) {
@@ -24,4 +24,33 @@ angular.module('starter.controllers', [])
       alert('Unable to get location: ' + error.message);
     });
   };
+})
+/////////////////////////////////////////////////////////
+.controller('securiteCtrl', function($scope, $ionicLoading) {
+    $scope.loading = $ionicLoading.show({
+        content: 'Veuillez patienter nous essayons d\'envoyer les informations sur le serveur',
+        showBackdrop: true
+    });
+})
+////////////////////////////////////////////////////////
+.controller('AppController', function($scope) {
+    $scope.leftButtons = [{
+        type: 'button-icon icon ion-navicon',
+        tap: function(e) {
+            $scope.sideMenuController.toggleLeft();
+        }
+    }];
+})
+/////////////////////////////////////////////////////////
+.controller('Page1Controller', function($scope) {
+
+})
+
+.controller('Page2Controller', function($scope) {
+    $scope.leftButtons = [{
+        type: 'button-icon icon ion-navicon',
+        tap: function(e) {
+            $scope.sideMenuController.toggleLeft();
+        }
+    }];
 });
