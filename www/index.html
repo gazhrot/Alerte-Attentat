@@ -15,7 +15,7 @@
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&amp;sensor=true"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&amp;sensor=false"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -28,7 +28,7 @@
 
   <body ng-app="starter" ng-controller="MapCtrl">
     <ion-header-bar class="bar-stable">
-      <h1 class="title">Map</h1>
+      <h1 class="title">Hackaton 42</h1>
     </ion-header-bar>
 
     <ion-content scroll="false">
@@ -36,7 +36,9 @@
     </ion-content>
 
     <ion-footer-bar class="bar-stable">
-      <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate"></a>
+      <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">Ma position</a>
+      <a ng-click="addSafeMarker()" class="button-icon icon ion-navigate">Safe</a>
+      <a ng-click="addUnSafeMarker()" class="button-icon icon ion-navigate">unSafe</a>
     </ion-footer-bar>
   </body>
 </html>

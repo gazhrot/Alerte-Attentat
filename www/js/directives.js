@@ -31,4 +31,21 @@ angular.module('starter.directives', [])
       }
     }
   }
+})
+
+.factory('Safe', function() {
+
+  var secureAlert = "u are in secure zone.";
+
+  return {
+    getStatut: function() {
+      return secureAlert;
+    },
+    addSafeMarker: function() {
+      return "safe marker";
+    },
+    addUnSafeMarker: function() {
+      return "unsafe marker";
+    }
+  }
 });

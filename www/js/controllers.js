@@ -1,6 +1,41 @@
 angular.module('starter.controllers', [])
 
-.controller('MapCtrl', function($scope, $ionicLoading) {
+.controller('MapCtrl', function($scope, $ionicLoading, Safe) {
+  
+  $scope.addSafeMarker = function () {
+    $scope.statut = Safe.getStatut();
+    console.log("ajout du safe marqueur en cours");
+
+    navigator.geolocation.getCurrentPosition(function (pos) {
+      console.log('position?', pos);
+      $scope.coord = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+      $scope.marker = new google.maps.Marker({
+        icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+        position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
+        /*animation: google.maps.Animation.DROP,*/
+        map: $scope.map
+      });
+    }, function (error) {
+      alert('Unable to get location: ' + error.message);
+    })
+  }
+  $scope.addUnSafeMarker = function () {
+    $scope.statut = Safe.getStatut();
+    console.log("ajout du safe marqueur en cours");
+
+    navigator.geolocation.getCurrentPosition(function (pos) {
+      console.log('position?', pos);
+      $scope.coord = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+      $scope.marker = new google.maps.Marker({
+        icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+        position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
+        /*animation: google.maps.Animation.DROP,*/
+        map: $scope.map
+      });
+    }, function (error) {
+      alert('Unable to get location: ' + error.message);
+    })
+  }
   $scope.mapCreated = function(map) {
     $scope.map = map;
   };
@@ -12,7 +47,7 @@ angular.module('starter.controllers', [])
     }
 
     $scope.loading = $ionicLoading.show({
-      content: 'Getting current location...',
+      content: 'Fuck Off Yacine...',
       showBackdrop: false
     });
 
@@ -24,4 +59,23 @@ angular.module('starter.controllers', [])
       alert('Unable to get location: ' + error.message);
     });
   };
+})
+
+/*
+.controller('SafeCtrl', function($scope, Safe) {
+
 });
+*/
+/*  $scope.notSafe = function () {
+    $scope.statut = Safe.getStatut();
+    alert($scope.statut);
+  }
+});
+.controller('HazardCtrl', function($scope) {
+
+
+
+});
+
+});
+*/
