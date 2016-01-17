@@ -98,15 +98,7 @@ tap: function(e) {
 })
 
 .controller('Page2Controller', function($scope) {
-<<<<<<< HEAD
-	$scope.leftButtons = [{
-		type: 'button-icon icon ion-navicon',
-tap: function(e) {
-	$scope.sideMenuController.toggleLeft();
-}
-}];
-});
-=======
+
     $scope.leftButtons = [{
         type: 'button-icon icon ion-navicon',
         tap: function(e) {
@@ -118,4 +110,3 @@ tap: function(e) {
     }
 
 });
->>>>>>> 273ff7e8830111f55f65ec79bdb23930f3961955
