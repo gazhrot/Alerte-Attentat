@@ -54,6 +54,10 @@ angular.module('starter.controllers', [])
     $scope.leftButtons = [{
         type: 'button-icon icon ion-navicon',
         tap: function(e) {
+            if ($scope.)
+            {
+
+            }
             $scope.sideMenuController.toggleLeft();
         }
     }];
