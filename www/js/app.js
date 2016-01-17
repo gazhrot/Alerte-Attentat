@@ -1,20 +1,18 @@
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives'])
 
-.run(function($ionicPlatform)
-{
-    $ionicPlatform.ready(function()
-    {
-        if(window.StatusBar)
-        {
-            StatusBar.styleDefault();
-        }
-    });
-})
-.config(['$locationProvider', function($locationProvider) {
-    if(window.history && window.history.pushState) {
-        $locationProvider.html5Mode(true);
+.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if(window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
-}])
+    if(window.StatusBar) {
+      StatusBar.styleDefault();
+    }
+  });
+})
+
 .config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
