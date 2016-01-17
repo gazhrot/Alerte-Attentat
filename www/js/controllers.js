@@ -79,13 +79,6 @@ angular.module('starter.controllers', [])
 				flee_status: ""
 			})
 		}
-
-
-
-
-
-
-
 })
 
 			/*navigator.geolocation.getCurrentPosition(function (pos) {
