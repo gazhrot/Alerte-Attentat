@@ -73,6 +73,10 @@ angular.module('starter.controllers', [])
 	};
 })
 /////////////////////////////////////////////////////////
+.controller('homeCtrl', function() {
+
+})
+/////////////////////////////////////////////////////////
 .controller('securiteCtrl', function($scope, $ionicLoading) {
 	$scope.loading = $ionicLoading.show({
 		content: 'Veuillez patienter nous essayons d\'envoyer les informations sur le serveur',
@@ -94,6 +98,7 @@ tap: function(e) {
 })
 
 .controller('Page2Controller', function($scope) {
+<<<<<<< HEAD
 	$scope.leftButtons = [{
 		type: 'button-icon icon ion-navicon',
 tap: function(e) {
@@ -101,3 +106,20 @@ tap: function(e) {
 }
 }];
 });
+=======
+    $scope.leftButtons = [{
+        type: 'button-icon icon ion-navicon',
+        tap: function(e) {
+            if ($scope.)
+            {
+
+            }
+            $scope.sideMenuController.toggleLeft();
+        }
+    }];
+    $scope.danger = function() {
+
+    }
+
+});
+>>>>>>> 273ff7e8830111f55f65ec79bdb23930f3961955
