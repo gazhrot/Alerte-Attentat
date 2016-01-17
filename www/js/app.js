@@ -21,43 +21,43 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives']
 
         .state('home', {
             url: "/home",
-            templateUrl: "Hackaton42/www/templates/home.html",
+            templateUrl: "templates/home.html",
             controller : "Page1Controller"
         })
 
         .state('securite', {
             url: "/securite",
-            templateUrl: "Hackaton42/www/templates/securite.html",
+            templateUrl: "templates/securite.html",
             controller : "Page2Controller"
         })
 
         .state('danger', {
             url: "/danger",
-            templateUrl: "Hackaton42/www/templates/danger.html",
+            templateUrl: "templates/danger.html",
             controller : "Page2Controller"
         })
 
         .state('shelter', {
             url: "/shelter",
-            templateUrl: "Hackaton42/www/templates/shelter.html",
+            templateUrl: "templates/shelter.html",
             controller : "Page2Controller"
         })
 
         .state('temoignage', {
             url: "/temoignage",
-            templateUrl: "Hackaton42/www/templates/temoignage.html",
+            templateUrl: "templates/temoignage.html",
             controller : "Page2Controller"
         })
 
         .state('fuire', {
             url: "/fuire",
-            templateUrl: "Hackaton42/www/templates/fuire.html",
+            templateUrl: "templates/fuire.html",
             controller : "Page2Controller"
         })
 
         .state('cacher', {
             url: "/cacher",
-            templateUrl: "Hackaton42/www/templates/cacher.html",
+            templateUrl: "templates/cacher.html",
             controller : "Page2Controller"
         });
 
