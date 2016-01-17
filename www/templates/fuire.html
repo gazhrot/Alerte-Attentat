@@ -1,6 +1,6 @@
-<ion-view title="Fuire" left-buttons="leftButtons" drag-back>
+<ion-view title="Fuire" left-buttons="leftButtons" ng-controller="MapCtrl" drag-back>
     <ion-content has-header="true" padding="false" scroll="false">
-        <button class="button button-bar-inline rouge" ui-sref="temoignage">Je prefere attendre les secours</button>
-        <button class="button button-bar-inline vert" ui-sref="home">Obtenir un itineraire</button>
+        <button class="button button-bar-inline rouge" ng-click="cantFlee()" ui-sref="temoignage">Je prefere attendre les secours</button>
+        <button class="button button-bar-inline vert" ng-click="canFlee()" ui-sref="home">Obtenir un itineraire</button>
     </ion-content>
 </ion-view>

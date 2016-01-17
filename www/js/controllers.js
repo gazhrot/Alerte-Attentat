@@ -69,14 +69,14 @@ angular.module('starter.controllers', [])
 		$scope.canFlee = function() {
 			console.log("la personne veut recevoir un itineraire gps d'une personne a proximiter");
 			socket.emit('flee_status', {
-				flee_status: ""
+				flee_status: "need to go"
 			})
 		}
 
 		$scope.cantFlee = function() {
 			console.log("la personne veut rester cacher");
 			socket.emit('flee_status', {
-				flee_status: ""
+				flee_status: "waiting"
 			})
 		}
 })
