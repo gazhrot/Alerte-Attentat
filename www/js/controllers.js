@@ -4,32 +4,6 @@ angular.module('starter.controllers', [])
 	$scope.mapCreated = function(map) {
 		$scope.map = map;
 	};
-	$scope.addSafeMarker = function() {
-		$scope.statut = Safe.getStatut();
-		console.log("ajout du safe marqueur en cours");
-
-		navigator.geolocation.getCurrentPosition(function (pos) {
-			console.log('position?', pos);
-			$scope.latitude = pos.coords.latitude;
-			$scope.longitude = pos.coords.longitude;
-			console.log($scope.latitude);
-			console.log($scope.longitude);
-			$scope.coord = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-			$scope.marker = new google.maps.Marker({
-				icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-				position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
-				/*animation: google.maps.Animation.DROP,*/
-				map: $scope.map
-			});
-		}, function(error) {
-			alert('Unable to get location: ' + error.message);
-		})
-		socket.emit('flag', {
-			lat: $scope.latitude.toString(),
-			lng: $scope.longitude.toString(),
-			status: "safe"
-		})
-	}
 	$scope.addUnSafeMarker = function() {
 		$scope.statut = Safe.getStatut();
 		console.log("ajout du safe marqueur en cours");
@@ -91,6 +65,32 @@ tap: function(e) {
 	$scope.sideMenuController.toggleLeft();
 }
 }];
+$scope.addSafeMarker = function() {
+		$scope.statut = Safe.getStatut();
+		console.log("ajout du safe marqueur en cours");
+
+		navigator.geolocation.getCurrentPosition(function (pos) {
+			console.log('position?', pos);
+			$scope.latitude = pos.coords.latitude;
+			$scope.longitude = pos.coords.longitude;
+			console.log($scope.latitude);
+			console.log($scope.longitude);
+			$scope.coord = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+			$scope.marker = new google.maps.Marker({
+				icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+				position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
+				/*animation: google.maps.Animation.DROP,*/
+				map: $scope.map
+			});
+		}, function(error) {
+			alert('Unable to get location: ' + error.message);
+		})
+		socket.emit('flag', {
+			lat: $scope.latitude.toString(),
+			lng: $scope.longitude.toString(),
+			status: "safe"
+		})
+	}
 })
 /////////////////////////////////////////////////////////
 .controller('Page1Controller', function($scope) {
