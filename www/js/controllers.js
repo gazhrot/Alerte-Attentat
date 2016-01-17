@@ -1,29 +1,105 @@
 angular.module('starter.controllers', [])
 //////////////////////////////////////////////////////
 .controller('MapCtrl', function($scope, $ionicLoading) {
-	$scope.mapCreated = function(map) {
-		$scope.map = map;
-	};
-	$scope.centerOnMe = function () {
-		console.log("Centering");
-		if (!$scope.map) {
-			return;
+		
+		$scope.showLocation = function(position) {
+			$scope.latitude = position.coords.latitude;
+			$scope.longitude = position.coords.longitude;
+        	console.log('Latitude : '+ $scope.latitude +' - Longitude : '+ $scope.longitude);
+			socket.emit('flag', {
+				lat: $scope.latitude.toString(),
+				lng: $scope.longitude.toString(),
+				status: "safe"
+			})
+    	};
+
+    	$scope.showLocation2 = function(position) {
+			$scope.latitude = position.coords.latitude;
+			$scope.longitude = position.coords.longitude;
+        	console.log('Latitude : '+ $scope.latitude +' - Longitude : '+ $scope.longitude);
+			socket.emit('flag', {
+				lat: $scope.latitude.toString(),
+				lng: $scope.longitude.toString(),
+				status: "unsafe"
+			})
+    	};
+
+		$scope.addSafeMarker = function() {
+			console.log("ajout du safe marqueur en cours");
+			navigator.geolocation.getCurrentPosition(showLocation, function() {
+				return 0;
+			});
+		};
+
+		$scope.addUnSafeMarker = function() {
+			console.log("ajout du unsafe marqueur en cours");
+			navigator.geolocation.getCurrentPosition(showLocation2, function() {
+				return 0;
+			});
 		}
-
-		$scope.loading = $ionicLoading.show({
-			content: 'Getting current location...',
-			showBackdrop: true
-		});
-
-		navigator.geolocation.getCurrentPosition(function (pos) {
-			console.log('Got pos', pos);
-			$scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-			$scope.loading.hide();
-		}, function (error) {
-			alert('Unable to get location: ' + error.message);
-		});
-	};
 })
+
+			/*navigator.geolocation.getCurrentPosition(function (pos) {
+				console.log('Got pos', pos);
+				$scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+				$scope.loading.hide();
+			}, function (error) {
+				alert('Unable to get location: ' + error.message);
+			});
+
+			navigator.geolocation.getCurrentPosition(function (pos) {
+				console.log('position?', pos);
+				$scope.latitude = pos.coords.latitude;
+				$scope.longitude = pos.coords.longitude;
+				console.log($scope.latitude);
+				console.log($scope.longitude);
+				$scope.coord = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+				$scope.marker = new google.maps.Marker({
+					icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+					position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
+					animation: google.maps.Animation.DROP,
+					map: $scope.map
+				});
+			}, function(error) {
+				alert('Unable to get location: ' + error.message);
+			})
+			socket.emit('flag', {
+				lat: $scope.latitude.toString(),
+				lng: $scope.longitude.toString(),
+				status: "safe"
+			})*/
+		/*$scope.addUnSafeMarker = function() {
+			console.log("ajout du safe marqueur en cours");
+
+			navigator.geolocation.getCurrentPosition(function (pos) {
+				console.log('Got pos', pos);
+				$scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+				$scope.loading.hide();
+			}, function (error) {
+				alert('Unable to get location: ' + error.message);
+			});
+
+			navigator.geolocation.getCurrentPosition(function (pos) {
+				console.log('position?', pos);
+				$scope.latitude = pos.coords.latitude;
+				$scope.longitude = pos.coords.longitude;
+				$scope.coord = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+				$scope.marker = new google.maps.Marker({
+					icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+					position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
+					animation: google.maps.Animation.DROP,
+					map: $scope.map
+				});
+			}, function (error) {
+				alert('Unable to get location: ' + error.message);
+			})
+			socket.emit('flag', {
+				lat: $scope.latitude.toString(),
+				lng: $scope.longitude.toString(),
+				status: "unsafe"
+			})
+		}
+	};*/
 /////////////////////////////////////////////////////////
 .controller('homeCtrl', function() {
 
@@ -43,54 +119,6 @@ tap: function(e) {
 	$scope.sideMenuController.toggleLeft();
 }
 }];
-	$scope.addSafeMarker = function() {
-		$scope.statut = Safe.getStatut();
-		console.log("ajout du safe marqueur en cours");
-
-		navigator.geolocation.getCurrentPosition(function (pos) {
-			console.log('position?', pos);
-			$scope.latitude = pos.coords.latitude;
-			$scope.longitude = pos.coords.longitude;
-			console.log($scope.latitude);
-			console.log($scope.longitude);
-			$scope.coord = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-			$scope.marker = new google.maps.Marker({
-				icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-				position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
-				/*animation: google.maps.Animation.DROP,*/
-				map: $scope.map
-			});
-		}, function(error) {
-			alert('Unable to get location: ' + error.message);
-		})
-		socket.emit('flag', {
-			lat: $scope.latitude.toString(),
-			lng: $scope.longitude.toString(),
-			status: "safe"
-		})
-	}
-	$scope.addUnSafeMarker = function() {
-		$scope.statut = Safe.getStatut();
-		console.log("ajout du safe marqueur en cours");
-
-		navigator.geolocation.getCurrentPosition(function (pos) {
-			console.log('position?', pos);
-			$scope.coord = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-			$scope.marker = new google.maps.Marker({
-				icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-				position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
-				/*animation: google.maps.Animation.DROP,*/
-				map: $scope.map
-			});
-		}, function (error) {
-			alert('Unable to get location: ' + error.message);
-		})
-		socket.emit('flag', {
-			lat: $scope.latitude.toString(),
-			lng: $scope.longitude.toString(),
-			status: "unsafe"
-		})
-	}
 })
 /////////////////////////////////////////////////////////
 .controller('Page1Controller', function($scope) {
