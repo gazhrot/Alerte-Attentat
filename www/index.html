@@ -1,4 +1,4 @@
-yn!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -14,14 +14,11 @@ yn!DOCTYPE html>
 
         <!-- ionic/angularjs js && socket.io -->
         <script src="lib/ionic/js/ionic.bundle.js"></script>
-<<<<<<< HEAD
 		<script src="https://cdn.socket.io/socket.io-1.4.3.js"></script>
 		<script>var socket = io('104.197.132.231' + ':8080');</script>
         <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&amp;sensor=true"></script>-->
-=======
 
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&amp;sensor=true"></script>
->>>>>>> 273ff7e8830111f55f65ec79bdb23930f3961955
 
         <!-- cordova script (this will be a 404 during development) -->
         <script src="cordova.js"></script>
@@ -53,7 +50,23 @@ yn!DOCTYPE html>
                 font-family: 'Montserrat', cursive;
                 font-style: oblique;
                 font-weight: normal;
-
+            }
+            .gris {
+                height: 50%;
+                width: 100%;
+                border: none;
+                padding: 0;
+                color: white;
+                background-color: #3E3E3E;
+                line-height: 60px;
+                text-transform: uppercase;
+                font-size: 4em;
+                font-family: 'Montserrat', cursive;
+                font-style: oblique;
+                font-weight: normal;
+            }
+            .modaleLog {
+                
             }
         </style>
         <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
@@ -67,7 +80,7 @@ yn!DOCTYPE html>
     <body ng-app="starter" ng-controller="AppController">
         <ion-nav-bar>
             <ion-nav-back-button class="button-clear" animation="nav-title-slide-ios7">
-                <i class="ion-arrow-left-c"></i>
+                <i class="ion-arrow-left-c ion-arrow-resize"></i>
             </ion-nav-back-button>
         </ion-nav-bar>
 
