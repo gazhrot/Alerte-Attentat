@@ -9,4 +9,4 @@ Read file [COPYING](COPYING)
 
 ## Authors &amp; Contributors
 
-[gazhrot@gmail.com](Axel Bruneaux), Romain Daniel(romain.daniel@epitech.eu).
+[Axel Bruneaux](gazhrot@gmail.com), Romain Daniel(romain.daniel@epitech.eu).
