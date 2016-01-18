@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>app</title>
+
+<<<<<<< HEAD
+        <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+        <link href="css/ionic.app.css" rel="stylesheet">
+        -->
+
+        <!-- ionic/angularjs js && socket.io -->
+        <script src="lib/ionic/js/ionic.bundle.js"></script>
+		<script src="https://cdn.socket.io/socket.io-1.4.3.js"></script>
+		<script>var socket = io('104.197.132.231' + ':8080');</script>
+        <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&amp;sensor=true"></script>-->
+
+        <!-- cordova script (this will be a 404 during development) -->
+        <script src="cordova.js"></script>
+        <style media="screen" type="text/css">
+=======
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style media="screen" type="text/css">
+>>>>>>> 7fb3776097a25e6fb4a006d5575b9182a6ded356
+            .rouge {
+                height: 50%;
+                width: 100%;
+                border: none;
+                padding: 0;
+                color: white;
+                background-color: #FE4141;
+                line-height: 60px;
+                text-transform: uppercase;
+                font-size: 40px;
+                font-family: 'Montserrat', cursive;
+                font-style: oblique;
+                font-weight: normal;
+            }
+            .vert {
+                height: 50%;
+                width: 100%;
+                border: none;
+                padding: 0;
+                color: white;
+                background-color: #8DCF92;
+                line-height: 60px;
+                text-transform: uppercase;
+                font-size: 40px;
+                font-family: 'Montserrat', cursive;
+                font-style: oblique;
+                font-weight: normal;
+            }
+            .gris {
+                height: 50%;
+                width: 100%;
+                border: none;
+                padding: 0;
+                color: white;
+                background-color: #3E3E3E;
+                line-height: 60px;
+                text-transform: uppercase;
+                font-size: 40px;
+                font-family: 'Montserrat', cursive;
+                font-style: oblique;
+                font-weight: normal;
+            }
+            .modaleLog {
+                background-color: #FCF000;
+                color: black;
+            }
+            .modaleLog:before {
+                content: url("img/log.png");
+                text-align: center;
+                width: 5%;
+                border-right: 1px solid #D7C302;
+                padding: 0.5% 1.3% 0 0;
+            }
+            .logInfo {
+                animation: appear 2000ms
+            }
+            @-webkit-keyframes appear {
+                from {opacity: 0.2;
+                    margin-top: 35px;}
+                to {opacity: 1;
+                    margin-top: 0;}
+            }
+        </style>
+        <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <!-- <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css"> -->
+
+        <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+        <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js && socket.io -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic/js/angular/angular-resource.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.3.js"></script>
+    <script>var socket = io('104.197.132.231' + ':8080');</script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&amp;sensor=true"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
+</head>
+<body ng-app="starter" ng-controller="AppController">
+<ion-nav-bar>
+    <ion-nav-back-button class="button-clear" animation="nav-title-slide-ios7">
+    <i class="ion-arrow-left-c"></i>
+    </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-nav-view animation="slide-left-right"></ion-nav-view>
+</body>
+</html>
