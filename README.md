@@ -1,5 +1,5 @@
-# CodinGame
-Solution des exercices de CodinGame
+# ------------
+Projet d'application Web/Mobile
 
 ## Copyright
 
@@ -7,7 +7,6 @@ License: GPL 2.0
 
 Read file [COPYING](COPYING)
 
-
 ## Authors &amp; Contributors
 
-Axel Bruneaux, Romain Daniel.
+[gazhrot@gmail.com](Axel Bruneaux), Romain Daniel(romain.daniel@epitech.eu).
