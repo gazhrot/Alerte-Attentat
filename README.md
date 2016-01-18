@@ -10,4 +10,4 @@ Read file [COPYING](COPYING)
 
 ## Authors &amp; Contributors
 
-Axel Bruneaux
+Axel Bruneaux, Romain Daniel.
