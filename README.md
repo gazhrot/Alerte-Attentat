@@ -1,5 +1,12 @@
-# ------------
-Projet d'application Web/Mobile
+<p align="center">
+<img src="http://s29.postimg.org/59byvmrqf/image.jpg" />
+</p>
+
+![ALERT ATTENTAT](http://s29.postimg.org/59byvmrqf/image.jpg)
+
+# ALERTE ATTENTAT
+
+
 
 ## Copyright
 
@@ -9,4 +16,4 @@ Read file [COPYING](COPYING)
 
 ## Authors &amp; Contributors
 
-[Axel Bruneaux](gazhrot@gmail.com), Romain Daniel(romain.daniel@epitech.eu).
+Axel Bruneaux (gazhrot@gmail.com), Romain Daniel (romain.daniel@epitech.eu).
