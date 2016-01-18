@@ -1,5 +1,5 @@
 <p align="center">
-<img src="http://image.noelshack.com/fichiers/2016/03/1453118991-app.jpg" />
+<img width="320" height="640" src="http://image.noelshack.com/fichiers/2016/03/1453118991-app.jpg" />
 </p>
 
 
