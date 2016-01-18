@@ -1,6 +1,10 @@
-<ion-view title="Securite" left-buttons="leftButtons" drag-back>
+<ion-view>
     <ion-content has-header="false" padding="false" scroll="false">
-        <button class="button button-full gris" ui-sref="temoignage">Je peux temoigner<br/>de la situation</button>
-        <button class="button button-full gris" ui-sref="shelter">Je peux abriter<br/>des personnes chez moi</button>
+        <button class="button button-bar-inline gris" ui-sref="temoignage"><img src="Hackaton42/www/img/micro.png" style="text-transform: none; width: 15%; padding-top: 20px"><br/>Je peux temoigner<br/>de la situation</button>
+        <hr style="padding: 0; margin: 0; color: grey;"/>
+        <button class="button button-bar-inline gris" ui-sref="shelter"><img src="Hackaton42/www/img/shelter.png" style="text-transform: none; width: 25%; padding-top: 20px"><br/>Je peux abriter<br/>des personnes chez moi</button>
+        <div class="bar bar-footer modaleLog">
+            <div class="title"><p class="logInfo">Votre localisation a bien ete transmise</p></div>
+        </div>
     </ion-content>
 </ion-view>

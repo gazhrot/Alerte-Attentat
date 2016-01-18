@@ -37,6 +37,48 @@ angular.module('starter.controllers', [])
 				return 0;
 			});
 		}
+
+		$scope.isBlessed = function() {
+			console.log("la personne est blesser");
+			socket.emit('vital_status', {
+				vital_status: "blessed"
+			})
+		}
+
+		$scope.isFine = function() {
+			console.log("la personne va bien");
+			socket.emit('vital_status', {
+				vital_status: "fine"	
+			})
+		}
+
+		$scope.isMovable = function() {
+			console.log("la personne peut se deplacer");
+			socket.emit('move_status', {
+				move_status: "yes"	
+			})
+		}
+
+		$scope.isNotMovable = function() {
+			console.log("la personne ne peut pas se deplacer");
+			socket.emit('move_status', {
+				move_status: "no"	
+			})
+		}
+
+		$scope.canFlee = function() {
+			console.log("la personne veut recevoir un itineraire gps d'une personne a proximiter");
+			socket.emit('flee_status', {
+				flee_status: "need to go"
+			})
+		}
+
+		$scope.cantFlee = function() {
+			console.log("la personne veut rester cacher");
+			socket.emit('flee_status', {
+				flee_status: "waiting"
+			})
+		}
 })
 
 			/*navigator.geolocation.getCurrentPosition(function (pos) {
